@@ -1,25 +1,11 @@
 # MetricHand
 
-**Geometry-Aware Flow Matching for 4D Hand Reconstruction in Metric World Space**
+**Code is coming soon.**
 
-[Visit the project page](https://Bieber1205.github.io/MetricHand/)
+## Architecture
 
-This repository hosts the public **project showcase only**: method figures, qualitative comparison videos, and quantitative results. It does **not** contain research implementation, training/inference code, model checkpoints, or dataset source files.
+![MetricHand architecture](media/framework.webp)
 
-## Authors
+## Quantitative Results
 
-Yibo Bai¹, Likui Zhang², Jinglei Zhang³, Zhengbin Pang¹, Xingshen Song¹\*, Xiaoqing Yin¹, Jinsheng Deng¹\*.
-
-¹ National University of Defense Technology  
-² Sun Yat-sen University  
-³ Shanghai Jiao Tong University  
-\* Corresponding authors.
-
-## Website structure
-
-- `index.html`: static project page
-- `style.css`: responsive website styling
-- `media/`: presentation figures, video posters, and 12 comparison clips
-- `.nojekyll`: serve the static site directly with GitHub Pages
-
-The website has no analytics, external scripts, or dependencies on the former anonymous host. GitHub Pages serves the `main` branch from the repository root.
+![Quantitative comparison on HOT3D and ARCTIC](media/figure1/panel_b.png)
