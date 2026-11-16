@@ -8,7 +8,7 @@ This repository hosts the public **project showcase only**: method figures, qual
 
 ## Authors
 
-Yibo Bai¹, Likui Zhang², Jinglei Zhang³, Zhengbin Pang¹, Xingshen Song¹\*, Xiaoqing Yin, Jinsheng Deng¹\*.
+Yibo Bai¹, Likui Zhang², Jinglei Zhang³, Zhengbin Pang¹, Xingshen Song¹\*, Xiaoqing Yin¹, Jinsheng Deng¹\*.
 
 ¹ National University of Defense Technology  
 ² Sun Yat-sen University  
