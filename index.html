@@ -2,274 +2,260 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="MetricHand: geometry-aware flow matching for 4D hand reconstruction in metric world space.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MetricHand: Geometry-Aware Flow Matching for 4D Hand Reconstruction in Metric World Space. Official project page with demos, method, and results.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://Bieber1205.github.io/MetricHand/">
-  <meta property="og:title" content="MetricHand: Geometry-Aware Flow Matching">
-  <meta property="og:description" content="4D hand reconstruction in metric world space. Method, qualitative comparisons, and quantitative results.">
+  <meta name="theme-color" content="#f7f9fc">
+  <link rel="canonical" href="https://bieber1205.github.io/MetricHand/">
+  <meta property="og:title" content="MetricHand: Geometry-Aware Flow Matching for 4D Hand Reconstruction in Metric World Space">
+  <meta property="og:description" content="Geometry meets motion. Explore MetricHand's 4D hand reconstruction demos, method, and benchmark results.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://Bieber1205.github.io/MetricHand/">
-  <meta property="og:image" content="https://Bieber1205.github.io/MetricHand/media/figure1/panel_c.png">
-  <meta name="referrer" content="no-referrer">
-  <meta name="theme-color" content="#f6f7f5">
-  <title>MetricHand · 4D Hand Reconstruction</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23213047'/%3E%3Ctext x='20' y='28' text-anchor='middle' fill='%2367BCE8' font-family='Arial' font-size='26'%3EM%3C/text%3E%3C/svg%3E">
+  <meta property="og:url" content="https://bieber1205.github.io/MetricHand/">
+  <meta property="og:image" content="https://bieber1205.github.io/MetricHand/media/figure1/panel_c.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>MetricHand | 4D Hand Reconstruction in Metric World Space</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%232563eb'/%3E%3Ctext x='20' y='28' text-anchor='middle' fill='white' font-family='Arial' font-size='26'%3EM%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#method">Skip to content</a>
-  <header class="nav">
-    <a class="brand" href="#">Metric<span>Hand</span><small>4D</small></a>
-    <nav aria-label="Main navigation">
-      <a href="#method">Method</a>
-      <a href="#gallery">Qualitative</a>
-      <a href="#results">Quantitative</a>
-      
-    </nav>
-  </header>
-
+  <a class="skip-link" href="#abstract">Skip to content</a>
+  <nav class="top-nav" aria-label="Main navigation">
+    <div class="top-nav-inner container">
+      <a class="brand" href="#demo">MetricHand</a>
+      <div class="nav-links">
+        <a href="#demo">Demo</a>
+        <a href="#performance">Performance</a>
+        <a href="#reconstruction">Results</a>
+        <a href="#method">Method</a>
+        <a href="#quantitative">Quantitative</a>
+        <a href="#citation">Citation</a>
+      </div>
+    </div>
+  </nav>
   <main>
-    <section class="hero">
-      <p class="eyebrow"><span></span> Geometry meets motion</p>
-      <h1>MetricHand</h1>
-      <h2>Geometry-Aware Flow Matching for<br>4D Hand Reconstruction in Metric World Space</h2>
+    <header class="hero container" id="demo">
+      <div class="title-wrap">
+        <p class="paper-tag">arXiv · 2611.21060</p>
+        <h1>MetricHand</h1>
+        <p class="subtitle">Geometry-Aware Flow Matching for<br class="desktop-break"> 4D Hand Reconstruction in Metric World Space</p>
+        <div class="author-block" aria-label="Authors and affiliations">
+          <p class="authors">Yibo Bai<sup>1</sup>, Likui Zhang<sup>2</sup>, Jinglei Zhang<sup>3</sup>, Zhengbin Pang<sup>1</sup>,<br class="desktop-break">
+            Xingshen Song<sup>1,*</sup>, Xiaoqing Yin<sup>1</sup>, Jinsheng Deng<sup>4,*</sup></p>
+          <p class="affiliations"><span><sup>1</sup> National University of Defense Technology</span><span><sup>2</sup> Sun Yat-sen University</span><br class="desktop-break"><span><sup>3</sup> Shanghai Jiao Tong University</span><span><sup>4</sup> Academy of Military Sciences</span></p>
+          <p class="corresponding">* Corresponding authors</p>
+        </div>
+        <div class="links">
+          <a class="btn primary" href="https://arxiv.org/abs/2611.21060" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 2h7l3 3v13H5zM12 2v4h3M8 9h4M8 12h4"/></svg>arXiv</a>
+          <a class="btn" href="https://github.com/Bieber1205/MetricHand" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 5-5 5 5 5m6-10 5 5-5 5M11 3l-2 14"/></svg>Code</a>
+          <a class="btn" href="#citation"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h5v6H3zM12 5h5v6h-5zM8 11c0 3-2 4-4 4m13-4c0 3-2 4-4 4"/></svg>BibTeX</a>
+        </div>
+        <p class="release-note"><span></span>Code is coming soon.</p>
+      </div>
+      <figure class="demo-figure">
+        <div class="hero-video panel">
+          <div class="video-titlebar"><span class="live-dot"></span><span>4D hand reconstruction in metric world space</span><span class="video-badge">HOT3D + ARCTIC</span></div>
+          <video id="demo-video" autoplay muted loop playsinline controls preload="metadata" poster="media/ours/arctic_01.jpg" width="1600" height="900" aria-label="MetricHand demonstration on HOT3D and ARCTIC">
+            <source src="media/metrichand-demo.mp4" type="video/mp4">
+            Your browser does not support HTML video. <a href="media/metrichand-demo.mp4">Open the demonstration video.</a>
+          </video>
+        </div>
+        <figcaption class="caption">Egocentric input → MetricHand reconstruction. Twelve examples from HOT3D and ARCTIC.</figcaption>
+      </figure>
+    </header>
 
-      <div class="author-block" aria-label="Authors and affiliations">
-        <p class="authors">Yibo Bai<sup>1</sup><span>·</span> Likui Zhang<sup>2</sup><span>·</span> Jinglei Zhang<sup>3</sup><span>·</span> Zhengbin Pang<sup>1</sup><br>
-        Xingshen Song<sup>1,*</sup><span>·</span> Xiaoqing Yin<sup>1</sup><span>·</span> Jinsheng Deng<sup>4,*</sup></p>
-        <p class="affiliations"><sup>1</sup> National University of Defense Technology<br><sup>2</sup> Sun Yat-sen University <span>·</span> <sup>3</sup> Shanghai Jiao Tong University<br><sup>4</sup> Academy of Military Sciences</p>
-        <p class="corresponding">* Corresponding authors</p>
+    <section class="container" id="performance">
+      <h2 class="section-title">Performance Overview</h2>
+      <p class="section-desc">More accurate metric localization and temporally coherent hand motion.</p>
+      <div class="metric-grid" aria-label="Error reduction relative to HaWoR">
+        <article class="metric-card"><h3>Camera-space MPJPE</h3><p><strong>49.3%</strong><span>HOT3D</span><strong>52.9%</strong><span>ARCTIC</span></p></article>
+        <article class="metric-card"><h3>Absolute world-space MPJPE</h3><p><strong>28.7%</strong><span>HOT3D</span><strong>21.7%</strong><span>ARCTIC</span></p></article>
+        <article class="metric-card"><h3>Wrist localization error</h3><p><strong>48.5%</strong><span>HOT3D</span><strong>37.9%</strong><span>ARCTIC</span></p></article>
+        <article class="metric-card"><h3>World-space acceleration error</h3><p><strong>44.2%</strong><span>HOT3D</span><strong>64.3%</strong><span>ARCTIC</span></p></article>
       </div>
-      <div class="actions">
-        <a class="primary" href="#method">Explore the project <span>↓</span></a>
-        <a class="secondary" href="#gallery">Watch comparisons <span>↓</span></a>
-      </div>
-      <div class="hero-visual">
-        <div class="visual-heading"><span class="dot"></span><strong>ARCTIC qualitative example.</strong><span>ARCTIC</span></div>
-        <a class="hero-open" href="#gallery" aria-label="Open the qualitative video gallery">
-          <img src="media/arctic_050/fig3.webp" alt="ARCTIC arctic_050 comparison of WiLoR-SLAM, Dyn-HaMR, HaWoR and MetricHand with ground truth" fetchpriority="high">
-        </a>
-        <p>WiLoR-SLAM · Dyn-HaMR · HaWoR · Ours · Ground truth</p>
-      </div>
-    </section>
-
-    <section id="figure1" class="section figure1-section">
-      <div class="simple-section-head"><h2>Figure 1</h2></div>
-      <div class="figure1-grid">
-        <figure class="figure1-panel"><span>A</span><img src="media/figure1/panel_a.png" alt="Figure 1A: RGB-only depth bias compared with geometry-guided metric translation"></figure>
-        <figure class="figure1-panel"><span>B</span><img src="media/figure1/panel_b.png" alt="Figure 1B: HOT3D and ARCTIC quantitative radar charts"></figure>
-        <figure class="figure1-panel figure1-panel-wide"><span>C</span><img src="media/figure1/panel_c.png" alt="Figure 1C: qualitative hand motion reconstruction examples on HOT3D and ARCTIC"></figure>
-      </div>
-    </section>
-
-    <section id="method" class="section method-section">
-      <div class="section-head">
-        <div><p class="eyebrow">The approach</p><h2>Geometry conditions every step.</h2></div>
-        <p>Depth priors from hand–object interaction regions provide metric cues for localization and articulated temporal reconstruction.</p>
-      </div>
-      <figure class="framework">
-        <img src="media/framework.webp" alt="MetricHand framework: visual and geometric features condition coarse estimation and temporal flow matching">
-        <figcaption>MetricHand architecture from the paper. RGB features, estimated depth, camera motion, and geometry-aware conditions guide every flow step.</figcaption>
+      <p class="metric-note">Relative error reduction versus HaWoR, as reported in the paper. Larger reductions are better.</p>
+      <figure class="panel performance-panel">
+        <img src="media/figure1/panel_b.png" alt="Paper Figure 1(b): normalized radar comparisons on HOT3D and ARCTIC" loading="lazy">
+        <figcaption>Quantitative comparison from Figure 1(b). For raw errors and units, see the <a href="#quantitative">results tables</a>.</figcaption>
       </figure>
     </section>
 
-    <section id="gallery" class="section qualitative-section">
-      <div class="simple-section-head"><h2>Qualitative Results</h2></div>
-      <div class="gallery-note"><p>HOT3D and ARCTIC comparisons.</p><p id="result-count" role="status">12 comparison videos</p></div>
-      <div id="video-grid" class="qualitative-grid">
-        <article class="video-card">
-          <div class="video-frame">
-            <video controls playsinline loop preload="none" poster="media/qualitative/arctic_01.jpg" aria-label="ARCTIC s05-waffleiron_use_02-0 method comparison">
-              <source src="media/qualitative/arctic_01.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-meta">
-            <div><span>ARCTIC</span><span>01 / 6</span></div>
-            <h3>s05-waffleiron_use_02-0</h3>
-            <p>Frames 225–344 · 4 seconds · both hands</p>
-          </div>
-        </article>
-        <article class="video-card">
-          <div class="video-frame">
-            <video controls playsinline loop preload="none" poster="media/qualitative/hot3d_01.jpg" aria-label="HOT3D P0010_0ecbf39f method comparison">
-              <source src="media/qualitative/hot3d_01.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-meta">
-            <div><span>HOT3D</span><span>01 / 6</span></div>
-            <h3>P0010_0ecbf39f</h3>
-            <p>Frames 1669–1788 · 4 seconds · both hands</p>
-          </div>
-        </article>
-        <article class="video-card">
-          <div class="video-frame">
-            <video controls playsinline loop preload="none" poster="media/qualitative/arctic_02.jpg" aria-label="ARCTIC s05-laptop_use_02-0 method comparison">
-              <source src="media/qualitative/arctic_02.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-meta">
-            <div><span>ARCTIC</span><span>02 / 6</span></div>
-            <h3>s05-laptop_use_02-0</h3>
-            <p>Frames 480–599 · 4 seconds · both hands</p>
-          </div>
-        </article>
-        <article class="video-card">
-          <div class="video-frame">
-            <video controls playsinline loop preload="none" poster="media/qualitative/hot3d_02.jpg" aria-label="HOT3D P0011_cee8fe4f method comparison">
-              <source src="media/qualitative/hot3d_02.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-meta">
-            <div><span>HOT3D</span><span>02 / 6</span></div>
-            <h3>P0011_cee8fe4f</h3>
-            <p>Frames 3122–3241 · 4 seconds · both hands</p>
-          </div>
-        </article>
-        <article class="video-card">
-          <div class="video-frame">
-            <video controls playsinline loop preload="none" poster="media/qualitative/arctic_03.jpg" aria-label="ARCTIC s05-waffleiron_use_02-0 method comparison">
-              <source src="media/qualitative/arctic_03.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-meta">
-            <div><span>ARCTIC</span><span>03 / 6</span></div>
-            <h3>s05-waffleiron_use_02-0</h3>
-            <p>Frames 255–374 · 4 seconds · both hands</p>
-          </div>
-        </article>
-        <article class="video-card">
-          <div class="video-frame">
-            <video controls playsinline loop preload="none" poster="media/qualitative/hot3d_03.jpg" aria-label="HOT3D P0011_76ea6d47 method comparison">
-              <source src="media/qualitative/hot3d_03.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-meta">
-            <div><span>HOT3D</span><span>03 / 6</span></div>
-            <h3>P0011_76ea6d47</h3>
-            <p>Frames 2045–2164 · 4 seconds · both hands</p>
-          </div>
-        </article>
-        <article class="video-card">
-          <div class="video-frame">
-            <video controls playsinline loop preload="none" poster="media/qualitative/arctic_04.jpg" aria-label="ARCTIC s05-waffleiron_use_02-0 method comparison">
-              <source src="media/qualitative/arctic_04.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-meta">
-            <div><span>ARCTIC</span><span>04 / 6</span></div>
-            <h3>s05-waffleiron_use_02-0</h3>
-            <p>Frames 285–404 · 4 seconds · both hands</p>
-          </div>
-        </article>
-        <article class="video-card">
-          <div class="video-frame">
-            <video controls playsinline loop preload="none" poster="media/qualitative/hot3d_04.jpg" aria-label="HOT3D P0011_76ea6d47 method comparison">
-              <source src="media/qualitative/hot3d_04.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-meta">
-            <div><span>HOT3D</span><span>04 / 6</span></div>
-            <h3>P0011_76ea6d47</h3>
-            <p>Frames 2141–2260 · 4 seconds · both hands</p>
-          </div>
-        </article>
-        <article class="video-card">
-          <div class="video-frame">
-            <video controls playsinline loop preload="none" poster="media/qualitative/arctic_05.jpg" aria-label="ARCTIC s05-ketchup_use_01-0 method comparison">
-              <source src="media/qualitative/arctic_05.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-meta">
-            <div><span>ARCTIC</span><span>05 / 6</span></div>
-            <h3>s05-ketchup_use_01-0</h3>
-            <p>Frames 517–636 · 4 seconds · both hands</p>
-          </div>
-        </article>
-        <article class="video-card">
-          <div class="video-frame">
-            <video controls playsinline loop preload="none" poster="media/qualitative/hot3d_05.jpg" aria-label="HOT3D P0011_11475e24 method comparison">
-              <source src="media/qualitative/hot3d_05.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-meta">
-            <div><span>HOT3D</span><span>05 / 6</span></div>
-            <h3>P0011_11475e24</h3>
-            <p>Frames 1640–1759 · 4 seconds · both hands</p>
-          </div>
-        </article>
-        <article class="video-card">
-          <div class="video-frame">
-            <video controls playsinline loop preload="none" poster="media/qualitative/arctic_06.jpg" aria-label="ARCTIC s05-ketchup_use_01-0 method comparison">
-              <source src="media/qualitative/arctic_06.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-meta">
-            <div><span>ARCTIC</span><span>06 / 6</span></div>
-            <h3>s05-ketchup_use_01-0</h3>
-            <p>Frames 557–676 · 4 seconds · both hands</p>
-          </div>
-        </article>
-        <article class="video-card">
-          <div class="video-frame">
-            <video controls playsinline loop preload="none" poster="media/qualitative/hot3d_06.jpg" aria-label="HOT3D P0011_76ea6d47 method comparison">
-              <source src="media/qualitative/hot3d_06.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="video-meta">
-            <div><span>HOT3D</span><span>06 / 6</span></div>
-            <h3>P0011_76ea6d47</h3>
-            <p>Frames 2180–2299 · 4 seconds · both hands</p>
-          </div>
-        </article>
-      </div>
+    <section class="container" id="abstract">
+      <h2 class="section-title">Abstract</h2>
+      <div class="panel abstract-panel"><p>Egocentric hand motion provides physical motion supervision for dexterous manipulation and vision-language-action pretraining. Reliable use of this supervision requires accurate and temporally coherent 4D hand reconstruction in metric world space. Existing methods typically lift framewise estimates produced under weak perspective into world coordinates. By ignoring joint-dependent depth variation at close range, this approximation couples errors in translation, orientation, and articulation that persist after world lifting and worsen under occlusion. We present MetricHand, a geometry-aware flow matching framework for 4D hand reconstruction in metric world space. MetricHand encodes depth priors from hand-object interaction regions into joint-associated representations that preserve local spatial structure and metric scale. Fused with visual features, this geometry guides coarse metric estimation and conditions every step of temporal generation. The model jointly recovers world-space translation, global orientation, MANO articulation, and shape, while structural priors and temporal context support estimation under partial occlusion. MetricHand reduces camera-space MPJPE by 49.3% and 52.9%, absolute world-space MPJPE by 28.7% and 21.7%, and wrist localization error by 48.5% and 37.9% relative to HaWoR, respectively. World-space acceleration error decreases by 44.2% and 64.3%, demonstrating improved temporal fidelity alongside more accurate absolute localization.</p></div>
     </section>
 
-    <section id="results" class="section results-section">
-      <div class="simple-section-head"><h2>Quantitative Results</h2></div>
+    <section class="container" id="reconstruction">
+      <h2 class="section-title">Reconstruction Results</h2>
+      <p class="section-desc">Choose a case, then switch between MetricHand's reconstruction and the full method comparison.</p>
+      <div class="filter-row" role="group" aria-label="Filter reconstruction cases by dataset">
+        <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All datasets <span>12</span></button>
+        <button class="filter-btn" type="button" data-filter="HOT3D" aria-pressed="false">HOT3D <span>6</span></button>
+        <button class="filter-btn" type="button" data-filter="ARCTIC" aria-pressed="false">ARCTIC <span>6</span></button>
+      </div>
+      <div class="case-carousel panel">
+        <button class="case-nav prev" id="case-prev" type="button" aria-label="Previous cases">‹</button>
+        <div class="case-strip" id="case-strip" role="group" aria-label="Reconstruction case selector">
+          <button class="case-button active" type="button" data-case="arctic_01" data-title="s05-waffleiron_use_02-0" data-detail="Frames 225–344 · 4 seconds · both hands" data-dataset="ARCTIC" aria-pressed="true" aria-label="ARCTIC case 01: s05-waffleiron_use_02-0">
+                <img src="media/ours/arctic_01.jpg" alt="" width="1600" height="900" loading="lazy">
+                <span class="case-label">ARCTIC <span>· Case 01</span></span>
+                <span class="case-sequence">s05-waffleiron_use_02-0</span>
+              </button>
+<button class="case-button" type="button" data-case="hot3d_01" data-title="P0010_0ecbf39f" data-detail="Frames 1669–1788 · 4 seconds · both hands" data-dataset="HOT3D" aria-pressed="false" aria-label="HOT3D case 01: P0010_0ecbf39f">
+                <img src="media/ours/hot3d_01.jpg" alt="" width="1600" height="900" loading="lazy">
+                <span class="case-label">HOT3D <span>· Case 01</span></span>
+                <span class="case-sequence">P0010_0ecbf39f</span>
+              </button>
+<button class="case-button" type="button" data-case="arctic_02" data-title="s05-laptop_use_02-0" data-detail="Frames 480–599 · 4 seconds · both hands" data-dataset="ARCTIC" aria-pressed="false" aria-label="ARCTIC case 02: s05-laptop_use_02-0">
+                <img src="media/ours/arctic_02.jpg" alt="" width="1600" height="900" loading="lazy">
+                <span class="case-label">ARCTIC <span>· Case 02</span></span>
+                <span class="case-sequence">s05-laptop_use_02-0</span>
+              </button>
+<button class="case-button" type="button" data-case="hot3d_02" data-title="P0011_cee8fe4f" data-detail="Frames 3122–3241 · 4 seconds · both hands" data-dataset="HOT3D" aria-pressed="false" aria-label="HOT3D case 02: P0011_cee8fe4f">
+                <img src="media/ours/hot3d_02.jpg" alt="" width="1600" height="900" loading="lazy">
+                <span class="case-label">HOT3D <span>· Case 02</span></span>
+                <span class="case-sequence">P0011_cee8fe4f</span>
+              </button>
+<button class="case-button" type="button" data-case="arctic_03" data-title="s05-waffleiron_use_02-0" data-detail="Frames 255–374 · 4 seconds · both hands" data-dataset="ARCTIC" aria-pressed="false" aria-label="ARCTIC case 03: s05-waffleiron_use_02-0">
+                <img src="media/ours/arctic_03.jpg" alt="" width="1600" height="900" loading="lazy">
+                <span class="case-label">ARCTIC <span>· Case 03</span></span>
+                <span class="case-sequence">s05-waffleiron_use_02-0</span>
+              </button>
+<button class="case-button" type="button" data-case="hot3d_03" data-title="P0011_76ea6d47" data-detail="Frames 2045–2164 · 4 seconds · both hands" data-dataset="HOT3D" aria-pressed="false" aria-label="HOT3D case 03: P0011_76ea6d47">
+                <img src="media/ours/hot3d_03.jpg" alt="" width="1600" height="900" loading="lazy">
+                <span class="case-label">HOT3D <span>· Case 03</span></span>
+                <span class="case-sequence">P0011_76ea6d47</span>
+              </button>
+<button class="case-button" type="button" data-case="arctic_04" data-title="s05-waffleiron_use_02-0" data-detail="Frames 285–404 · 4 seconds · both hands" data-dataset="ARCTIC" aria-pressed="false" aria-label="ARCTIC case 04: s05-waffleiron_use_02-0">
+                <img src="media/ours/arctic_04.jpg" alt="" width="1600" height="900" loading="lazy">
+                <span class="case-label">ARCTIC <span>· Case 04</span></span>
+                <span class="case-sequence">s05-waffleiron_use_02-0</span>
+              </button>
+<button class="case-button" type="button" data-case="hot3d_04" data-title="P0011_76ea6d47" data-detail="Frames 2141–2260 · 4 seconds · both hands" data-dataset="HOT3D" aria-pressed="false" aria-label="HOT3D case 04: P0011_76ea6d47">
+                <img src="media/ours/hot3d_04.jpg" alt="" width="1600" height="900" loading="lazy">
+                <span class="case-label">HOT3D <span>· Case 04</span></span>
+                <span class="case-sequence">P0011_76ea6d47</span>
+              </button>
+<button class="case-button" type="button" data-case="arctic_05" data-title="s05-ketchup_use_01-0" data-detail="Frames 517–636 · 4 seconds · both hands" data-dataset="ARCTIC" aria-pressed="false" aria-label="ARCTIC case 05: s05-ketchup_use_01-0">
+                <img src="media/ours/arctic_05.jpg" alt="" width="1600" height="900" loading="lazy">
+                <span class="case-label">ARCTIC <span>· Case 05</span></span>
+                <span class="case-sequence">s05-ketchup_use_01-0</span>
+              </button>
+<button class="case-button" type="button" data-case="hot3d_05" data-title="P0011_11475e24" data-detail="Frames 1640–1759 · 4 seconds · both hands" data-dataset="HOT3D" aria-pressed="false" aria-label="HOT3D case 05: P0011_11475e24">
+                <img src="media/ours/hot3d_05.jpg" alt="" width="1600" height="900" loading="lazy">
+                <span class="case-label">HOT3D <span>· Case 05</span></span>
+                <span class="case-sequence">P0011_11475e24</span>
+              </button>
+<button class="case-button" type="button" data-case="arctic_06" data-title="s05-ketchup_use_01-0" data-detail="Frames 557–676 · 4 seconds · both hands" data-dataset="ARCTIC" aria-pressed="false" aria-label="ARCTIC case 06: s05-ketchup_use_01-0">
+                <img src="media/ours/arctic_06.jpg" alt="" width="1600" height="900" loading="lazy">
+                <span class="case-label">ARCTIC <span>· Case 06</span></span>
+                <span class="case-sequence">s05-ketchup_use_01-0</span>
+              </button>
+<button class="case-button" type="button" data-case="hot3d_06" data-title="P0011_76ea6d47" data-detail="Frames 2180–2299 · 4 seconds · both hands" data-dataset="HOT3D" aria-pressed="false" aria-label="HOT3D case 06: P0011_76ea6d47">
+                <img src="media/ours/hot3d_06.jpg" alt="" width="1600" height="900" loading="lazy">
+                <span class="case-label">HOT3D <span>· Case 06</span></span>
+                <span class="case-sequence">P0011_76ea6d47</span>
+              </button>
 
-      <article class="result-card">
-        <div class="result-title"><div><span>Dataset</span><h3>HOT3D</h3></div><p>Camera-space and world-space hand reconstruction</p></div>
-        <div class="table-wrap"><table>
-          <thead><tr><th rowspan="2">Method</th><th colspan="4">Camera</th><th colspan="4">World</th></tr><tr><th>MPJPE</th><th>RA-MPJPE</th><th>PA-MPJPE</th><th>WristErr</th><th>ABS-W-MPJPE</th><th>W-MPJPE</th><th>WA-MPJPE</th><th>Accel.</th></tr></thead>
+        </div>
+        <button class="case-nav next" id="case-next" type="button" aria-label="Next cases">›</button>
+      </div>
+      <div class="panel-switch" role="group" aria-label="Reconstruction view">
+        <button class="mode-btn active" type="button" data-mode="ours" aria-pressed="true">Our Results</button>
+        <button class="mode-btn" type="button" data-mode="comparison" aria-pressed="false">Method Comparison</button>
+      </div>
+      <div class="recon-panel">
+        <div class="recon-header"><div><span class="dataset-tag" id="active-dataset">ARCTIC</span><h3 id="active-title">s05-waffleiron_use_02-0</h3></div><p id="active-detail">Frames 225–344 · 4 seconds · both hands</p></div>
+        <div class="recon-labels" id="view-labels"><span>Egocentric input</span><span>MetricHand · world-space reconstruction</span></div>
+        <video id="reconstruction-video" controls muted loop playsinline preload="metadata" poster="media/ours/arctic_01.jpg" src="media/ours/arctic_01.mp4" width="1600" height="900" aria-label="ARCTIC case 01: MetricHand reconstruction">
+          Your browser does not support HTML video. <a href="media/qualitative/arctic_01.mp4">Open the comparison video.</a>
+        </video>
+        <p class="recon-caption" id="view-caption">Source and MetricHand panels cropped from the original synchronized comparison video.</p>
+        <p id="video-error" class="video-error" role="status" hidden>Video could not load. <a id="video-fallback" href="media/ours/arctic_01.mp4">Open this video directly.</a></p>
+      </div>
+      <p class="gallery-status" id="gallery-status" role="status" aria-live="polite">Showing 12 cases · ARCTIC case 01 · Our Results</p>
+      <noscript><div class="panel noscript-panel"><p>JavaScript is disabled. Open any original comparison video below:</p><ul><li><a href="media/qualitative/arctic_01.mp4">ARCTIC case 01 — s05-waffleiron_use_02-0</a></li><li><a href="media/qualitative/hot3d_01.mp4">HOT3D case 01 — P0010_0ecbf39f</a></li><li><a href="media/qualitative/arctic_02.mp4">ARCTIC case 02 — s05-laptop_use_02-0</a></li><li><a href="media/qualitative/hot3d_02.mp4">HOT3D case 02 — P0011_cee8fe4f</a></li><li><a href="media/qualitative/arctic_03.mp4">ARCTIC case 03 — s05-waffleiron_use_02-0</a></li><li><a href="media/qualitative/hot3d_03.mp4">HOT3D case 03 — P0011_76ea6d47</a></li><li><a href="media/qualitative/arctic_04.mp4">ARCTIC case 04 — s05-waffleiron_use_02-0</a></li><li><a href="media/qualitative/hot3d_04.mp4">HOT3D case 04 — P0011_76ea6d47</a></li><li><a href="media/qualitative/arctic_05.mp4">ARCTIC case 05 — s05-ketchup_use_01-0</a></li><li><a href="media/qualitative/hot3d_05.mp4">HOT3D case 05 — P0011_11475e24</a></li><li><a href="media/qualitative/arctic_06.mp4">ARCTIC case 06 — s05-ketchup_use_01-0</a></li><li><a href="media/qualitative/hot3d_06.mp4">HOT3D case 06 — P0011_76ea6d47</a></li></ul></div></noscript>
+      <details class="keyframes panel"><summary>Paper qualitative overview</summary><img src="media/figure1/panel_c.png" alt="Paper Figure 1(c): hand motion reconstruction on HOT3D and ARCTIC, with HaWoR, MetricHand and ground truth" loading="lazy"></details>
+    </section>
+
+    <section class="container" id="method">
+      <h2 class="section-title">Method Overview</h2>
+      <p class="section-desc">Geometry-aware flow matching for 4D hand reconstruction in metric world space.</p>
+      <figure class="panel method-figure"><img src="media/framework.webp" alt="MetricHand architecture: geometry-aware representations, metric estimation and temporally conditioned flow matching" loading="lazy"><figcaption>MetricHand architecture. Geometry priors condition metric estimation and temporal generation.</figcaption></figure>
+      <div class="method-desc-grid">
+        <article class="method-desc-item"><span class="method-desc-tag">01 · GEOMETRY</span><h3>Preserve metric cues</h3><p>Depth priors from hand–object interaction regions are encoded into joint-associated representations that retain local spatial structure and metric scale.</p></article>
+        <article class="method-desc-item"><span class="method-desc-tag">02 · GENERATION</span><h3>Condition every step</h3><p>Fused visual and geometry features guide coarse metric estimation and condition each step of temporally coherent flow matching.</p></article>
+        <article class="method-desc-item"><span class="method-desc-tag">03 · RECONSTRUCTION</span><h3>Recover world-space motion</h3><p>The model jointly recovers translation, global orientation, MANO articulation and shape, using structural priors and temporal context under partial occlusion.</p></article>
+      </div>
+      <details class="keyframes panel"><summary>Why metric geometry matters</summary><img src="media/figure1/panel_a.png" alt="Paper Figure 1(a): weak-perspective RGB-only estimation can bias translation; geometry provides metric depth cues" loading="lazy"></details>
+    </section>
+
+    <section class="container" id="quantitative">
+      <h2 class="section-title">Quantitative Results</h2>
+      <p class="section-desc">Camera-space and world-space comparison on HOT3D and ARCTIC under the paper's evaluation protocol.</p>
+      <p class="table-note"><span class="rank-key first"></span> 1st <span class="rank-key second"></span> 2nd <span class="rank-key third"></span> 3rd. Position errors: mm. Acceleration error: m/s². Lower is better.</p>
+      <article class="panel result-card">
+          <div class="result-heading"><h3>HOT3D</h3><span>Lower is better ↓</span></div>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="HOT3D results; scroll horizontally to see all metrics"><table class="quant-table">
+<caption>HOT3D — camera-space and world-space reconstruction</caption>
+          <thead><tr><th rowspan="2" scope="col">Method</th><th colspan="4" scope="colgroup">Camera</th><th colspan="4" scope="colgroup">World</th></tr><tr><th scope="col">MPJPE ↓</th><th scope="col">RA-MPJPE ↓</th><th scope="col">PA-MPJPE ↓</th><th scope="col">WristErr ↓</th><th scope="col">ABS-W-MPJPE ↓</th><th scope="col">W-MPJPE ↓</th><th scope="col">WA-MPJPE ↓</th><th scope="col">Accel. ↓</th></tr></thead>
           <tbody>
-            <tr><td>HaMeR-SLAM</td><td>67.87</td><td>58.23</td><td>9.57</td><td>52.29</td><td>73.28</td><td>148.23</td><td>38.43</td><td>15.91</td></tr>
-            <tr><td>WiLoR-SLAM</td><td>53.78</td><td>16.58</td><td>6.70</td><td>48.89</td><td>59.21</td><td>75.90</td><td>24.65</td><td>11.39</td></tr>
-            <tr><td>HMP-SLAM</td><td>73.44</td><td>62.89</td><td>11.70</td><td>59.54</td><td>78.77</td><td>152.00</td><td>40.31</td><td>7.39</td></tr>
-            <tr><td>Dyn-HaMR</td><td>66.06</td><td>55.46</td><td>9.19</td><td>49.98</td><td>274.08</td><td>207.97</td><td>67.98</td><td>8.85</td></tr>
-            <tr><td>HaWoR</td><td class="second">16.97</td><td class="second">12.65</td><td>5.77</td><td class="second">14.99</td><td class="second">28.88</td><td class="second">41.09</td><td class="second">15.47</td><td class="third">5.57</td></tr>
-            <tr><td>HandFlow</td><td class="third">34.89</td><td class="third">14.26</td><td class="second">5.23</td><td class="third">31.45</td><td class="third">42.59</td><td>63.27</td><td>22.56</td><td>8.63</td></tr>
-            <tr><td>ACE-EgoHand (known-K)</td><td>113.92</td><td>16.19</td><td class="third">5.31</td><td>102.06</td><td>118.43</td><td class="third">55.95</td><td class="third">20.24</td><td class="second">4.13</td></tr>
-            <tr><td>ACE-EgoHand (K-free)</td><td>118.66</td><td>15.35</td><td>5.66</td><td>110.66</td><td>122.61</td><td>98.49</td><td>31.12</td><td>6.03</td></tr>
-            <tr><td>MINT</td><td>66.47</td><td>22.68</td><td>8.50</td><td>70.49</td><td>197.46</td><td>111.93</td><td>41.83</td><td>10.98</td></tr>
-            <tr class="ours-row"><td>Ours</td><td class="first">8.60</td><td class="first">5.84</td><td class="first">3.18</td><td class="first">7.72</td><td class="first">20.58</td><td class="first">26.71</td><td class="first">9.00</td><td class="first">3.11</td></tr>
-            <tr class="gain-row"><td>Gain vs. 2nd</td><td>49.3%</td><td>53.8%</td><td>39.2%</td><td>48.5%</td><td>28.7%</td><td>35.0%</td><td>41.8%</td><td>24.7%</td></tr>
+            <tr><th scope="row">HaMeR-SLAM</th><td>67.87</td><td>58.23</td><td>9.57</td><td>52.29</td><td>73.28</td><td>148.23</td><td>38.43</td><td>15.91</td></tr>
+            <tr><th scope="row">WiLoR-SLAM</th><td>53.78</td><td>16.58</td><td>6.70</td><td>48.89</td><td>59.21</td><td>75.90</td><td>24.65</td><td>11.39</td></tr>
+            <tr><th scope="row">HMP-SLAM</th><td>73.44</td><td>62.89</td><td>11.70</td><td>59.54</td><td>78.77</td><td>152.00</td><td>40.31</td><td>7.39</td></tr>
+            <tr><th scope="row">Dyn-HaMR</th><td>66.06</td><td>55.46</td><td>9.19</td><td>49.98</td><td>274.08</td><td>207.97</td><td>67.98</td><td>8.85</td></tr>
+            <tr><th scope="row">HaWoR</th><td class="second">16.97</td><td class="second">12.65</td><td>5.77</td><td class="second">14.99</td><td class="second">28.88</td><td class="second">41.09</td><td class="second">15.47</td><td class="third">5.57</td></tr>
+            <tr><th scope="row">HandFlow</th><td class="third">34.89</td><td class="third">14.26</td><td class="second">5.23</td><td class="third">31.45</td><td class="third">42.59</td><td>63.27</td><td>22.56</td><td>8.63</td></tr>
+            <tr><th scope="row">ACE-EgoHand (known-K)</th><td>113.92</td><td>16.19</td><td class="third">5.31</td><td>102.06</td><td>118.43</td><td class="third">55.95</td><td class="third">20.24</td><td class="second">4.13</td></tr>
+            <tr><th scope="row">ACE-EgoHand (K-free)</th><td>118.66</td><td>15.35</td><td>5.66</td><td>110.66</td><td>122.61</td><td>98.49</td><td>31.12</td><td>6.03</td></tr>
+            <tr><th scope="row">MINT</th><td>66.47</td><td>22.68</td><td>8.50</td><td>70.49</td><td>197.46</td><td>111.93</td><td>41.83</td><td>10.98</td></tr>
+            <tr class="ours-row"><th scope="row">MetricHand (Ours)</th><td class="first">8.60</td><td class="first">5.84</td><td class="first">3.18</td><td class="first">7.72</td><td class="first">20.58</td><td class="first">26.71</td><td class="first">9.00</td><td class="first">3.11</td></tr>
+            <tr class="gain-row"><th scope="row">Gain vs. 2nd</th><td>49.3%</td><td>53.8%</td><td>39.2%</td><td>48.5%</td><td>28.7%</td><td>35.0%</td><td>41.8%</td><td>24.7%</td></tr>
           </tbody>
         </table></div>
-      </article>
-
-      <article class="result-card">
-        <div class="result-title"><div><span>Dataset</span><h3>ARCTIC</h3></div><p>Camera-space and world-space hand reconstruction</p></div>
-        <div class="table-wrap"><table>
-          <thead><tr><th rowspan="2">Method</th><th colspan="4">Camera</th><th colspan="4">World</th></tr><tr><th>MPJPE</th><th>RA-MPJPE</th><th>PA-MPJPE</th><th>WristErr</th><th>ABS-W-MPJPE</th><th>W-MPJPE</th><th>WA-MPJPE</th><th>Accel.</th></tr></thead>
+        </article>
+<article class="panel result-card">
+          <div class="result-heading"><h3>ARCTIC</h3><span>Lower is better ↓</span></div>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="ARCTIC results; scroll horizontally to see all metrics"><table class="quant-table">
+<caption>ARCTIC — camera-space and world-space reconstruction</caption>
+          <thead><tr><th rowspan="2" scope="col">Method</th><th colspan="4" scope="colgroup">Camera</th><th colspan="4" scope="colgroup">World</th></tr><tr><th scope="col">MPJPE ↓</th><th scope="col">RA-MPJPE ↓</th><th scope="col">PA-MPJPE ↓</th><th scope="col">WristErr ↓</th><th scope="col">ABS-W-MPJPE ↓</th><th scope="col">W-MPJPE ↓</th><th scope="col">WA-MPJPE ↓</th><th scope="col">Accel. ↓</th></tr></thead>
           <tbody>
-            <tr><td>HaMeR-SLAM</td><td>54.56</td><td>25.67</td><td>9.68</td><td>56.05</td><td>166.19</td><td>83.51</td><td>31.21</td><td>17.14</td></tr>
-            <tr><td>WiLoR-SLAM</td><td class="second">36.23</td><td>14.23</td><td class="second">6.18</td><td class="third">34.56</td><td class="second">152.89</td><td>68.80</td><td>31.39</td><td>21.62</td></tr>
-            <tr><td>HMP-SLAM</td><td>95.82</td><td>32.63</td><td>11.89</td><td>100.61</td><td>199.30</td><td>99.51</td><td>37.31</td><td>9.38</td></tr>
-            <tr><td>Dyn-HaMR</td><td>50.56</td><td>25.20</td><td>9.87</td><td>50.12</td><td>671.54</td><td>160.91</td><td>41.91</td><td>11.59</td></tr>
-            <tr><td>HaWoR</td><td class="third">37.26</td><td>22.45</td><td class="third">7.10</td><td class="second">32.23</td><td class="third">154.36</td><td>68.52</td><td>28.17</td><td>12.28</td></tr>
-            <tr><td>ACE-EgoHand (known-K)</td><td>56.57</td><td class="second">12.04</td><td>7.30</td><td>57.56</td><td>160.71</td><td class="second">54.66</td><td class="third">24.25</td><td class="second">6.76</td></tr>
-            <tr><td>ACE-EgoHand (K-free)</td><td>58.70</td><td class="third">12.28</td><td>7.32</td><td>60.39</td><td>163.84</td><td class="third">55.78</td><td class="second">24.23</td><td class="third">6.84</td></tr>
-            <tr><td>MINT</td><td>116.45</td><td>27.23</td><td>9.68</td><td>106.91</td><td>621.82</td><td>107.94</td><td>45.37</td><td>13.49</td></tr>
-            <tr class="ours-row"><td>Ours</td><td class="first">17.54</td><td class="first">11.28</td><td class="first">5.18</td><td class="first">20.02</td><td class="first">120.86</td><td class="first">37.40</td><td class="first">19.08</td><td class="first">4.39</td></tr>
-            <tr class="gain-row"><td>Gain vs. 2nd</td><td>51.6%</td><td>6.3%</td><td>16.2%</td><td>37.9%</td><td>20.9%</td><td>31.6%</td><td>21.3%</td><td>35.1%</td></tr>
+            <tr><th scope="row">HaMeR-SLAM</th><td>54.56</td><td>25.67</td><td>9.68</td><td>56.05</td><td>166.19</td><td>83.51</td><td>31.21</td><td>17.14</td></tr>
+            <tr><th scope="row">WiLoR-SLAM</th><td class="second">36.23</td><td>14.23</td><td class="second">6.18</td><td class="third">34.56</td><td class="second">152.89</td><td>68.80</td><td>31.39</td><td>21.62</td></tr>
+            <tr><th scope="row">HMP-SLAM</th><td>95.82</td><td>32.63</td><td>11.89</td><td>100.61</td><td>199.30</td><td>99.51</td><td>37.31</td><td>9.38</td></tr>
+            <tr><th scope="row">Dyn-HaMR</th><td>50.56</td><td>25.20</td><td>9.87</td><td>50.12</td><td>671.54</td><td>160.91</td><td>41.91</td><td>11.59</td></tr>
+            <tr><th scope="row">HaWoR</th><td class="third">37.26</td><td>22.45</td><td class="third">7.10</td><td class="second">32.23</td><td class="third">154.36</td><td>68.52</td><td>28.17</td><td>12.28</td></tr>
+            <tr><th scope="row">ACE-EgoHand (known-K)</th><td>56.57</td><td class="second">12.04</td><td>7.30</td><td>57.56</td><td>160.71</td><td class="second">54.66</td><td class="third">24.25</td><td class="second">6.76</td></tr>
+            <tr><th scope="row">ACE-EgoHand (K-free)</th><td>58.70</td><td class="third">12.28</td><td>7.32</td><td>60.39</td><td>163.84</td><td class="third">55.78</td><td class="second">24.23</td><td class="third">6.84</td></tr>
+            <tr><th scope="row">MINT</th><td>116.45</td><td>27.23</td><td>9.68</td><td>106.91</td><td>621.82</td><td>107.94</td><td>45.37</td><td>13.49</td></tr>
+            <tr class="ours-row"><th scope="row">MetricHand (Ours)</th><td class="first">17.54</td><td class="first">11.28</td><td class="first">5.18</td><td class="first">20.02</td><td class="first">120.86</td><td class="first">37.40</td><td class="first">19.08</td><td class="first">4.39</td></tr>
+            <tr class="gain-row"><th scope="row">Gain vs. 2nd</th><td>51.6%</td><td>6.3%</td><td>16.2%</td><td>37.9%</td><td>20.9%</td><td>31.6%</td><td>21.3%</td><td>35.1%</td></tr>
           </tbody>
         </table></div>
-      </article>
-      <p class="table-note"><span class="key first"></span> 1st <span class="key second"></span> 2nd <span class="key third"></span> 3rd. Position errors: mm. Acceleration error: m/s². Lower is better.</p>
+        </article>
+
+      <p class="metric-note">“Gain vs. 2nd” compares MetricHand with the actual second-ranked error in each column. Abstract reductions above compare specifically with HaWoR.</p>
+    </section>
+
+    <section class="container" id="citation">
+      <h2 class="section-title">Citation</h2>
+      <p class="section-desc">If you find MetricHand useful for your research, please consider citing our paper.</p>
+      <div class="panel citation-panel"><div class="citation-toolbar"><span>BibTeX</span><button class="copy-btn" id="copy-bibtex" type="button">Copy BibTeX</button></div><pre><code id="bibtex">@misc{bai2026metrichand,
+  title={MetricHand: Geometry-Aware Flow Matching for 4D Hand Reconstruction in Metric World Space},
+  author={Yibo Bai and Likui Zhang and Jinglei Zhang and Zhengbin Pang and Xingshen Song and Xiaoqing Yin and Jinsheng Deng},
+  year={2026},
+  eprint={2611.21060},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2611.21060}
+}</code></pre></div>
+      <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
     </section>
   </main>
-
-  <footer><a class="brand" href="#">Metric<span>Hand</span><small>4D</small></a><p>Method · qualitative comparison · quantitative results</p><span class="display-only">Project showcase · No research code hosted</span></footer>
+  <footer class="container">
+    <p><a href="#citation">Citation / BibTeX</a><span>·</span><a href="https://arxiv.org/abs/2611.21060" target="_blank" rel="noopener noreferrer">arXiv</a><span>·</span><a href="https://github.com/Bieber1205/MetricHand" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    <p>MetricHand · Code is coming soon.</p>
+    <p class="credit">Layout inspired by the <a href="https://vidihand.github.io/" target="_blank" rel="noopener noreferrer">ViDiHand project page</a>.</p>
+  </footer>
 </body>
 </html>

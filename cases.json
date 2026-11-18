@@ -1,0 +1,74 @@
+[
+  {
+    "id": "arctic_01",
+    "dataset": "ARCTIC",
+    "title": "s05-waffleiron_use_02-0",
+    "detail": "Frames 225\u2013344 \u00b7 4 seconds \u00b7 both hands"
+  },
+  {
+    "id": "hot3d_01",
+    "dataset": "HOT3D",
+    "title": "P0010_0ecbf39f",
+    "detail": "Frames 1669\u20131788 \u00b7 4 seconds \u00b7 both hands"
+  },
+  {
+    "id": "arctic_02",
+    "dataset": "ARCTIC",
+    "title": "s05-laptop_use_02-0",
+    "detail": "Frames 480\u2013599 \u00b7 4 seconds \u00b7 both hands"
+  },
+  {
+    "id": "hot3d_02",
+    "dataset": "HOT3D",
+    "title": "P0011_cee8fe4f",
+    "detail": "Frames 3122\u20133241 \u00b7 4 seconds \u00b7 both hands"
+  },
+  {
+    "id": "arctic_03",
+    "dataset": "ARCTIC",
+    "title": "s05-waffleiron_use_02-0",
+    "detail": "Frames 255\u2013374 \u00b7 4 seconds \u00b7 both hands"
+  },
+  {
+    "id": "hot3d_03",
+    "dataset": "HOT3D",
+    "title": "P0011_76ea6d47",
+    "detail": "Frames 2045\u20132164 \u00b7 4 seconds \u00b7 both hands"
+  },
+  {
+    "id": "arctic_04",
+    "dataset": "ARCTIC",
+    "title": "s05-waffleiron_use_02-0",
+    "detail": "Frames 285\u2013404 \u00b7 4 seconds \u00b7 both hands"
+  },
+  {
+    "id": "hot3d_04",
+    "dataset": "HOT3D",
+    "title": "P0011_76ea6d47",
+    "detail": "Frames 2141\u20132260 \u00b7 4 seconds \u00b7 both hands"
+  },
+  {
+    "id": "arctic_05",
+    "dataset": "ARCTIC",
+    "title": "s05-ketchup_use_01-0",
+    "detail": "Frames 517\u2013636 \u00b7 4 seconds \u00b7 both hands"
+  },
+  {
+    "id": "hot3d_05",
+    "dataset": "HOT3D",
+    "title": "P0011_11475e24",
+    "detail": "Frames 1640\u20131759 \u00b7 4 seconds \u00b7 both hands"
+  },
+  {
+    "id": "arctic_06",
+    "dataset": "ARCTIC",
+    "title": "s05-ketchup_use_01-0",
+    "detail": "Frames 557\u2013676 \u00b7 4 seconds \u00b7 both hands"
+  },
+  {
+    "id": "hot3d_06",
+    "dataset": "HOT3D",
+    "title": "P0011_76ea6d47",
+    "detail": "Frames 2180\u20132299 \u00b7 4 seconds \u00b7 both hands"
+  }
+]
